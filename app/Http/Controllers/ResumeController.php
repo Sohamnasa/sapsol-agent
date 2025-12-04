@@ -41,8 +41,8 @@ class ResumeController extends Controller
                 
                 STRICT TASK:
                 1. Summarize the candidate.
-                2. Assign EXACTLY ONE role from: [MM, FICO, PM, SD, Basis].
-                3. Identify 3 skill gaps.
+                2. Assign any recommended roles.
+                3. Identify 3 skills that need improvement.
                 4. Suggest 3 learning tips.
                 5. LOG YOUR REASONING: Explain your logical steps, tools used (e.g., 'Text Analysis', 'Keyword Match'), and how inputs led to the role choice.
 
