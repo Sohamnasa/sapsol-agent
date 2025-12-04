@@ -36,3 +36,5 @@ A Laravel + AI application built for the AI-DevOps Hackathon. This tool accepts 
 2. **Deploy:**
    ```bash
    kubectl apply -f k8s.yaml
+
+3. **Access: Open http://localhost:30007**
