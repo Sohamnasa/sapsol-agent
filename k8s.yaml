@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resume-analyzer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resume-analyzer
+  template:
+    metadata:
+      labels:
+        app: resume-analyzer
+    spec:
+      containers:
+      - name: resume-analyzer
+        image: resume-analyzer-app:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+        env:
+        - name: APP_ENV
+          value: "production"
+        - name: APP_DEBUG
+          value: "true"
+        - name: APP_KEY
+          value: "base64:YOUR_APP_KEY_FROM_ENV_FILE"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: resume-analyzer-service
+spec:
+  type: NodePort
+  selector:
+    app: resume-analyzer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30007
